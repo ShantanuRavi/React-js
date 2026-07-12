@@ -4,7 +4,7 @@
 function App() {
 
   return (
- <h1>Namaste Duniya Vite</h1>
+ <h1>Namaste Duniya || From vite react</h1>
   )
 }
 
