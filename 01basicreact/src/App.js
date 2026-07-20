@@ -1,8 +1,11 @@
-
+import Hello from "./Hello";
 
 function App() {
   return (
-  <h1>Namaste Duniya React || from basic react</h1>
+    <>
+    <Hello/>
+    <h1>Namaste Duniya React || from basic react</h1>
+    </>
   );
 }
 
