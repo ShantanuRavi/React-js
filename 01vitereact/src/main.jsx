@@ -11,9 +11,12 @@ import React from 'react'
 //   },
 //   children:"Click me to visit google"
 // }
+
+
 // const anotherElement = (
 //   <a href="https://google.com" target="_blank">Visit Google</a>
 // )
+
 
 // function MyApp (){
 //   return (
@@ -21,10 +24,16 @@ import React from 'react'
 //   )
 // }
 
+
+//This is the predefined format of the createElement in React 
+
+//here React.createElement is by default injected ny Bable i.e transpiler
+const author = "Shan"
 const reactElement = React.createElement(
   "a",
   {href:"https://google.com",target:"_blank"},
-  "This is google link"
+  "This is google link",
+  author
 )
 
 
