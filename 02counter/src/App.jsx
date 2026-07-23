@@ -6,14 +6,30 @@ import './App.css'
 
 function App() {
 
-  //this is special type of the function useState(hook), in which counter is a variable and setCounter is a function
+  //this is special type of the function useState(hook),
+  //in which counter is a variable 
+  //and setCounter is a function
 
   let [counter,setCounter] = useState(0)
+
   const addValue = ()=>{
     // console.log("clicked",counter)
     counter = counter + 1
     if(counter <= 20){
       setCounter(counter)
+
+      // this will not work
+      // setCounter(counter)
+      // setCounter(counter)
+      // setCounter(counter)
+
+      //setCounter has a callback called prevCounter 
+      //which tracks previous value of the counter
+
+      // setCounter(pervCounter => prevCounter + 1)
+      // setCounter(pervCounter => prevCounter + 1)
+      // setCounter(pervCounter => prevCounter + 1)
+      // setCounter(pervCounter => prevCounter + 1)
     }
     else if(counter > 20)
     {
