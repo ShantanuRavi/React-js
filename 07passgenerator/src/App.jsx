@@ -5,12 +5,7 @@ function App() {
   const [length,setLength] = useState(8);
   const [numberAllowed,setNumber] = useState(false);
   const [charAllowed, setchar] = useState(false);
-  const [password, setPassword] = useState("")
-
-  //useRef is a React Hook that lets you reference a value that’s not needed for rendering
-
-  const passwordRef = useRef(null)
-
+  const [password, setPassword] = useState("");
 
   //useCallback is a React Hook that lets you cache a function definition between re-renders.
   //const cachedFn = useCallback(fn, dependencies)
@@ -32,15 +27,22 @@ function App() {
         pass = pass + str.charAt(char)
     }
     setPassword(pass)
-  } ,[length, numberAllowed, charAllowed, setPassword])
+    } ,[length, numberAllowed, charAllowed, setPassword])
+
+    useEffect(()=>{passwordGenerator()},[length, numberAllowed, charAllowed])
+
+
+//useRef is a React Hook that lets you reference a value that’s not needed for rendering
+
+  const passwordRef = useRef(null)
+
 
   const copyPassToClip = useCallback(()=>{
     passwordRef.current?.select();
     passwordRef.current?.setSelectionRange(0,999);
     window.navigator.clipboard.writeText(password)
   },[password])
-
-  useEffect(()=>{passwordGenerator()},[length, numberAllowed, charAllowed])
+  
   return (
     <>
         <div className="w-full max-w-md mx-auto shadow-md rounded-lg px-4 my-8 text-orange-500 bg-gray-800 flex flex-col items-center justify-center">
